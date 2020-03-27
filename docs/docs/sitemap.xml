@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/enable-istio-in-cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/api/api-tokens/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/feature-flags/enable-not-default-storage-drivers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/overview/architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cluster-access/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/drivers/cluster-drivers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/provisioning-vsphere-clusters/creating-credentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/network-plugins/custom-network-plugin-example/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/alerts/default-alerts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/how-storage-works/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/resource-quotas/quotas-for-projects/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/installation-requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/requirements/installing-docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/kub-intro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/node-requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/notifiers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/one-time-snapshots/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/monitoring/prometheus/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/provisioning-vsphere-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/upgrades-to-2x/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/quick-start-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/production/recommended-architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/production/nodes-and-roles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/security-scan/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/attaching-existing-storage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/etcd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/user-groups/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/enable-istio-in-namespace/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/how-ha-works/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/alerts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/provisioning-new-storage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/vsphere/enabling-uuid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/air-gap-helm2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/drivers/node-drivers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/resource-quotas/override-namespace-default/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/recurring-snapshots/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/controlplane/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/feature-flags/istio-virtual-service-ui/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/monitoring/viewing-metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/node-selectors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/overview/architecture-recommendations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/monitoring/cluster-metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/provisioning-vsphere-clusters/enabling-uuids/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/restoring-from-backup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/rbac/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/resource-quotas/override-container-default/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/nginx-proxy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/etcd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/upgrading/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/vsphere/config-reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/deploy-workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/disabling-istio/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/example-scenarios/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/monitoring/expression/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/overview/concepts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/resource-quotas/quota-type-reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/worker-and-generic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/vsphere/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/provisioning-vsphere-clusters/node-template-reference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/gateway/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/advanced/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/example-scenarios/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/troubleshooting/generic-troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/troubleshooting/generic-troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/os/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/set-up-traffic-management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/view-traffic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/quick-start/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/creator-permissions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/upgrades/basic/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/upgrades/automated/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/troubleshooting/job-complete-status/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/troubleshooting/job-complete-status/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/install-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/cluster-access/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/get-started/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/backups/single-node-backups/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/network-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/upgrades/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/troubleshooting/404-default-backend/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/troubleshooting/404-default-backend/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/ha/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/storage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/template-access-and-sharing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/creating-and-revising/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/enforcement/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/overrides/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/networking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/ha-embedded/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/helm/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/advanced/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/applying-templates/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/backups/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/datastore/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/backups/ha-backups/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/airgap/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/example-yaml/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/kube-dashboard/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/installation/uninstall/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/known-issues/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/upgrading-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/pod-security-policy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/rke-templates-and-hardware/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/air-gap-helm2/prepare-nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/prepare-nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/run-migration-tool/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/hardening-2.3.5/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/kubectl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-components/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/run-migration-tool/migration-tools-ref/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/amazon-aws-qs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/microsoft-azure-qs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/best-practices/deployment-strategies/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/digital-ocean-qs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/google-gcp-qs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/troubleshooting/ssh-connectivity-errors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/best-practices/deployment-types/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/best-practices/containers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/upgrades/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/workload/quickstart-deploy-workload-ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/hardening-2.3.3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/kubernetes-resources/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/best-practices/management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/workstation/docker-machine/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/workstation/boot-from-iso/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/hardening-2.3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/networking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/dns/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/hardening-2.2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/hardening-2.1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/rancherha/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/benchmark-2.3.5/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/imported-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/benchmark-2.3.3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/gce/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/benchmark-2.3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/do/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/benchmark-2.2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/vmware-esxi/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/benchmark-2.1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/openstack/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/azure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/aliyun/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/server/install-to-disk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/server/pxe/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/server/raspberry-pi/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/date-and-timezone/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/images-prefix/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/ssh-keys/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/write-files/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/running-commands/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/hostname/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/switching-consoles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/setting-up-docker-tls/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/private-registries/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/switching-docker-versions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/users/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/resizing-device-partition/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/sysctl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/adding-kernel-parameters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/loading-kernel-modules/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/kernel-modules-kernel-headers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/disable-access-to-system/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/configuration/airgap-configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/system-services/adding-system-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/system-services/custom-system-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/system-services/system-docker-volumes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/system-services/environment/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/kubeconfig/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/etcd-snapshots/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/boot-process/built-in-system-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/cert-mgmt/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/installation/certs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/boot-process/cloud-init/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/boot-process/image-preloading/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/boot-process/logging/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/storage/state-partition/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/storage/additional-mounts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/storage/using-zfs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/networking/interfaces/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/networking/dns/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/networking/proxy-settings/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/managing-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/custom-builds/custom-console/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/custom-builds/custom-kernels/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/custom-builds/custom-rancheros-iso/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/create-nodes-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/create-nodes-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/kubernetes-rke/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/kubernetes-rke/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/amazon-ecs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-init/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/air-gap-helm2/populate-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/populate-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/helm-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/workload/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/elasticsearch/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/troubleshooting/provisioning-errors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart-vagrant/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/workload/quickstart-deploy-workload-nodeport/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/private-registries/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/bastion-host/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/system-images/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/server-tags/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/secrets-encryption/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/services/services-extras/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/services/external-etcd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/authorization/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/rate-limiting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/audit-log/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/proxy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/azure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/single-node-docker/single-node-install-external-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/openstack/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/vsphere/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/cloud-providers/custom/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/network-plugins/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/dns/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/ingress-controllers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/metrics-server/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/config-options/add-ons/user-defined-add-ons/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/create-nodes-lb/nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/create-nodes-lb/nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/layer-4-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/layer-4-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-rancher/tls-secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/tls-secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-rancher/chart-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/chart-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/layer-7-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/layer-7-lb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-init/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/helm-rancher/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/kubernetes-rke/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/layer-7-lb/alb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/layer-7-lb/alb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/create-nodes-lb/nlb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/layer-4-lb/nlb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/layer-4-lb/nlb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/proxy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/proxy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/layer-7-lb/nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/layer-7-lb/nginx/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/k8s-install/create-nodes-lb/nlb/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/air-gap-helm2/launch-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/launch-kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/api-auditing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/api-auditing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/example-yamls/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart-manual-setup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/requirements/ports/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/splunk/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/faqs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/running-rancher-on-rancheros/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/security/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/recovery-console/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/custom-partition-layout/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/about/microcode-loader/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/restorations/single-node-restoration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/restorations/ha-restoration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm2/rke-add-on/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/rke-add-on/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/expose-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/monitor-apps/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/air-gap-helm2/install-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/install-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/config-private-registry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/helm-version/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/kafka/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/en/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/schedule-workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/pipelines/example-repos/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/syslog/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/pipelines/example/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/discover-services/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/logging/fluentd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/load-balancing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/best-practices/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/host-gateway-requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/restorations/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/rollbacks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/single-node/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/rollbacks/single-node-rollbacks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/ha/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/rollbacks/ha-server-rollbacks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/migrating-from-rke-add-on/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/namespace-migration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/upgrades/upgrades/ha/helm2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/custom-ca-root-certificate/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/local/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/ad/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/openldap/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/freeipa/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/azure-ad/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/github/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rbac/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/local-system-charts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/k8s-metadata/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rbac/global-permissions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rbac/cluster-project-roles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rbac/default-custom-roles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rbac/locked-roles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/pod-security-policies/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/drivers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/keycloak/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/ping-federate/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/microsoft-adfs/microsoft-adfs-setup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/microsoft-adfs/rancher-adfs-setup/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/microsoft-adfs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/okta/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/production/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cluster-access/ace/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cluster-access/cluster-members/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/editing-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/projects-and-namespaces/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cloning-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/certificate-rotation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/upgrading-cert-manager/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/upgrading-cert-manager/helm-2-instructions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/backing-up-etcd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/restoring-etcd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/cleaning-cluster-nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/gke/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/eks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/aks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/ack/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/tke/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/hosted-kubernetes-clusters/cce/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/ec2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/digital-ocean/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/azure/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/node-pools/vsphere/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/custom-nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/options/cloud-providers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/options/pod-security-policies/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/networking/cni-providers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/imported-clusters/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/rancher-agents/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/custom-nodes/agent-options/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/project-members/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/resource-quotas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/namespaces/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/tools/alerts/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/tools/logging/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/tools/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/workloads/deploy-workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/hpa-background/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/workloads/rollback-workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/manage-hpa-with-rancher-ui/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/workloads/upgrade-workloads/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/workloads/add-a-sidecar/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/manage-hpa-with-kubectl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/testing-hpa/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/load-balancers-and-ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/load-balancers-and-ingress/load-balancers/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/load-balancers-and-ingress/ingress/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/service-discovery/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/horitzontal-pod-autoscaler/hpa-for-rancher-before-2_0_7/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/examples/ebs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/examples/nfs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/examples/vsphere/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/certificates/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/configmaps/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/k8s-in-rancher/registries/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/istio/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/built-in/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/custom/creating/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/custom/adding/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/custom/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/glusterfs-volumes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/multi-cluster-apps/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/apps/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/catalog/globaldns/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/pod-security-policies/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/volumes-and-storage/iscsi-volumes/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/system-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/user-settings/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/user-settings/api-keys/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/user-settings/node-templates/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/rke-templates/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/user-settings/cloud-credentials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/user-settings/preferences/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/api/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/security/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/arm64-platform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/feature-flags/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/networking/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/technical/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/security/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/telemetry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/faq/removing-rancher/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/project-admin/pipelines/docs-for-v2.0.x/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/docs-for-2.1-and-2.2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/api-audit-log/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/v1.6-migration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/tls-settings/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/options/firewall/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/boot-process/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/cloud/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/admin-settings/authentication/google/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/custom-builds/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/en/cluster-admin/tools/istio/setup/enable-istio-in-cluster/enable-istio-with-psp/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/k3s/latest/en/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/networking/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rke/latest/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/server/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/storage/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/system-services/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/en/installation/running-rancheros/workstation/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/os/v1.x/</loc>
+  </url>
+  
+  <url>
+    <loc>http://jijeesh.github.io/docs/rancher/v2.x/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Restoring Backups—Kubernetes installs on Rancher Labs</title>
+    <link>http://jijeesh.github.io/docs/rancher/v2.x/en/backups/restorations/ha-restoration/</link>
+    <description>Recent content in Restoring Backups—Kubernetes installs on Rancher Labs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://jijeesh.github.io/docs/rancher/v2.x/en/backups/restorations/ha-restoration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
