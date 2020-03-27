@@ -5,7 +5,7 @@ aliases:
   - /rancher/v2.x/en/faq/contributing/
 ---
 
-This section explains the respositories used for Rancher, how to build the repositories, and what information to include when you file an issue.
+This section explains the repositories used for Rancher, how to build the repositories, and what information to include when you file an issue.
 
 For more detailed information on how to contribute to the development of Rancher projects, refer to the [Rancher Developer Wiki](https://github.com/rancher/rancher/wiki). The wiki has resources on many topics, including the following:
 
@@ -36,7 +36,7 @@ CLI | https://github.com/rancher/cli | This repository is the source code for th
 Telemetry repository | https://github.com/rancher/telemetry | This repository is the source for the Telemetry binary.
 loglevel repository | https://github.com/rancher/loglevel | This repository is the source of the loglevel binary, used to dynamically change log levels.
 
-To see all libraries/projects used in Rancher, see the `vendor.conf` in the `rancher/rancher` repository.
+To see all libraries/projects used in Rancher, see the [`go.mod` file](https://github.com/rancher/rancher/blob/master/go.mod) in the `rancher/rancher` repository.
 
 ![Rancher diagram]({{< baseurl >}}/img/rancher/ranchercomponentsdiagram.svg)<br/>
 <sup>Rancher components used for provisioning/managing Kubernetes clusters.</sup>
@@ -71,16 +71,16 @@ Please follow this checklist when filing an issue which will helps us investigat
   - Provide manual steps or automation scripts used to get from a newly created setup to the situation you reported.
 - **Logs:** Provide data/logs from the used resources.
   - Rancher
-      - Single node
+      - Docker install
 
         ```
         docker logs \
         --timestamps \
         $(docker ps | grep -E "rancher/rancher:|rancher/rancher " | awk '{ print $1 }')
         ```
-      - High Availability (HA) install using `kubectl`
+      - Kubernetes install using `kubectl`
 
-        > **Note:** Make sure you configured the correct kubeconfig (for example, `export KUBECONFIG=$PWD/kube_config_rancher-cluster.yml` for Rancher HA) or are using the embedded kubectl via the UI.
+        > **Note:** Make sure you configured the correct kubeconfig (for example, `export KUBECONFIG=$PWD/kube_config_rancher-cluster.yml` if Rancher is installed on a Kubernetes cluster) or are using the embedded kubectl via the UI.
 
         ```
         kubectl -n cattle-system \
@@ -88,16 +88,16 @@ Please follow this checklist when filing an issue which will helps us investigat
         -l app=rancher \
         --timestamps=true
         ```
-      - High Availability (HA) install using `docker` on each of the nodes in the RKE cluster
+      - Docker install using `docker` on each of the nodes in the RKE cluster
 
         ```
         docker logs \
         --timestamps \
         $(docker ps | grep -E "rancher/rancher@|rancher_rancher" | awk '{ print $1 }')
         ```
-      - High Availability (HA) RKE Add-On Install
+      - Kubernetes Install with RKE Add-On
 
-        > **Note:** Make sure you configured the correct kubeconfig (for example, `export KUBECONFIG=$PWD/kube_config_rancher-cluster.yml` for Rancher HA) or are using the embedded kubectl via the UI.
+        > **Note:** Make sure you configured the correct kubeconfig (for example, `export KUBECONFIG=$PWD/kube_config_rancher-cluster.yml` if the Rancher server is installed on a Kubernetes cluster) or are using the embedded kubectl via the UI.
 
         ```
         kubectl -n cattle-system \

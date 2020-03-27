@@ -1,5 +1,6 @@
 ---
-title: Installation
+title: RKE Kubernetes Installation
+description: RKE is a fast, versatile Kubernetes installer you can use to install Kubernetes on your Linux hosts. Learn the simple steps for an RKE Kubernetes installation
 weight: 50
 ---
 
@@ -147,6 +148,8 @@ Save a copy of the following files in a secure location:
 - `cluster.yml`: The RKE cluster configuration file.
 - `kube_config_cluster.yml`: The [Kubeconfig file]({{< baseurl >}}/rke/latest/en/kubeconfig/) for the cluster, this file contains credentials for full access to the cluster.
 - `cluster.rkestate`: The [Kubernetes Cluster State file](#kubernetes-cluster-state), this file contains credentials for full access to the cluster.<br/><br/>_The Kubernetes Cluster State file is only created when using RKE v0.2.0 or higher._
+
+> **Note:** The "rancher-cluster" parts of the two latter file names are dependent on how you name the RKE cluster configuration file.
 
 ### Kubernetes Cluster State
 

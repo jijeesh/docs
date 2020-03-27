@@ -1,15 +1,18 @@
 ---
-title: Hardening Guide - Rancher v2.3.x
-weight: 100
+title: Hardening Guide v2.3
+weight: 102
 ---
+This document provides prescriptive guidance for hardening a production installation of Rancher v2.3.0-v2.3.2. It outlines the configurations and controls required to address Kubernetes benchmark controls from the Center for Information Security (CIS).
 
-### Hardening Guide for Rancher 2.3.x with Kubernetes 1.15
+> This hardening guide describes how to secure the nodes in your cluster, and it is recommended to follow this guide before installing Kubernetes.
+
+This hardening guide is intended to be used with specific versions of the CIS Kubernetes Benchmark, Kubernetes, and Rancher:
+
+Hardening Guide Version | Rancher Version | CIS Benchmark Version | Kubernetes Version
+------------------------|----------------|-----------------------|------------------
+Hardening Guide v2.3 | Rancher v2.3.0-v2.3.2 | Benchmark v1.4.1 | Kubernetes 1.15
 
 [Click here to download a PDF version of this document](https://releases.rancher.com/documents/security/2.3.x/Rancher_Hardening_Guide.pdf)
-
-### Overview
-
-This document provides prescriptive guidance for hardening a production installation of Rancher v2.3.x with Kubernetes v1.15. It outlines the configurations and controls required to address Kubernetes benchmark controls from the Center for Information Security (CIS).
 
 For more detail about evaluating a hardened cluster against the official CIS benchmark, refer to the [CIS Benchmark Rancher Self-Assessment Guide - Rancher v2.3.x]({{< baseurl >}}/rancher/v2.x/en/security/benchmark-2.3/).
 
@@ -39,6 +42,8 @@ Items in this profile extend the “Level 1” profile and exhibit one or more o
 
 ## 1.1 - Rancher HA Kubernetes cluster host configuration
 
+(See Appendix A. for full ubuntu `cloud-config` example)
+
 ### 1.1.1 - Configure default sysctl settings on all hosts
 
 **Profile Applicability**
@@ -65,6 +70,12 @@ This supports the following control:
 sysctl vm.overcommit_memory
 ```
 
+- Verify `vm.panic_on_oom = 0`
+
+``` bash
+sysctl vm.panic_on_oom
+```
+
 - Verify `kernel.panic = 10`
 
 ``` bash
@@ -77,17 +88,32 @@ sysctl kernel.panic
 sysctl kernel.panic_on_oops
 ```
 
+- Verify `kernel.keys.root_maxkeys = 1000000`
+
+``` bash
+sysctl kernel.keys.root_maxkeys
+```
+
+- Verify `kernel.keys.root_maxbytes = 25000000`
+
+``` bash
+sysctl kernel.keys.root_maxbytes
+```
+
 **Remediation**
 
-- Set the following parameters in `/etc/sysctl.conf` on all nodes:
+- Set the following parameters in `/etc/sysctl.d/90-kubelet.conf` on all nodes:
 
 ``` plain
 vm.overcommit_memory=1
+vm.panic_on_oom=0
 kernel.panic=10
 kernel.panic_on_oops=1
+kernel.keys.root_maxkeys=1000000
+kernel.keys.root_maxbytes=25000000
 ```
 
-- Run `sysctl -p` to enable the settings.
+- Run `sysctl -p /etc/sysctl.d/90-kubelet.conf` to enable the settings.
 
 ### 1.1.2 - Install the encryption provider configuration on all control plane nodes
 
@@ -442,7 +468,7 @@ services:
 
 ## 2.1 - Rancher HA Kubernetes Cluster Configuration via RKE
 
-(See Appendix A. for full RKE `cluster.yml` example)
+(See Appendix B. for full RKE `cluster.yml` example)
 
 ### 2.1.1 - Configure kubelet options
 
@@ -997,11 +1023,11 @@ Upgrade the Rancher server installation using Helm, and configure the audit log 
 
 #### Reference
 
-- <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-rancher/chart-options/#advanced-options>
+- <https://rancher.com/docs/rancher/v2.x/en/installation/options/chart-options/#advanced-options>
 
 ## 3.2 - Rancher Management Control Plane Authentication
 
-### 3.2.1 - Change the local admin password from the default value
+### 3.2.1 - Change the local administrator password from the default value
 
 **Profile Applicability**
 
@@ -1009,11 +1035,11 @@ Upgrade the Rancher server installation using Helm, and configure the audit log 
 
 **Description**
 
-The local admin password should be changed from the default.
+The local administrator password should be changed from the default.
 
 **Rationale**
 
-The default admin password is common across all Rancher installations and should be changed immediately upon startup.
+The default administrator password is common across all Rancher installations and should be changed immediately upon startup.
 
 **Audit**
 
@@ -1122,7 +1148,97 @@ If a disallowed node driver is active, visit the _Node Drivers_ page under _Glob
 
 ---
 
-## Appendix A - Complete RKE `cluster.yml` Example
+## Appendix A - Complete ubuntu `cloud-config` Example
+
+`cloud-config` file to automate hardening manual steps on nodes deployment.
+
+```
+#cloud-config
+bootcmd:
+- apt-get update
+- apt-get install -y apt-transport-https
+apt:
+  sources:
+    docker:
+      source: "deb [arch=amd64] https://download.docker.com/linux/ubuntu $RELEASE stable"
+      keyid: 0EBFCD88
+packages:
+- [docker-ce, '5:19.03.5~3-0~ubuntu-bionic']
+- jq
+write_files:
+# 1.1.1 - Configure default sysctl settings on all hosts
+- path: /etc/sysctl.d/90-kubelet.conf
+  owner: root:root
+  permissions: '0644'
+  content: |
+    vm.overcommit_memory=1
+    vm.panic_on_oom=0
+    kernel.panic=10
+    kernel.panic_on_oops=1
+    kernel.keys.root_maxkeys=1000000
+    kernel.keys.root_maxbytes=25000000
+# 1.1.2 encription provider
+- path: /opt/kubernetes/encryption.yaml
+  owner: root:root
+  permissions: '0600'
+  content: |
+    apiVersion: apiserver.config.k8s.io/v1
+    kind: EncryptionConfiguration
+    resources:
+      - resources:
+        - secrets
+        providers:
+        - aescbc:
+            keys:
+            - name: key1
+              secret: QRCexFindur3dzS0P/UmHs5xA6sKu58RbtWOQFarfh4=
+        - identity: {}
+# 1.1.3 audit log
+- path: /opt/kubernetes/audit.yaml
+  owner: root:root
+  permissions: '0600'
+  content: |
+    apiVersion: audit.k8s.io/v1beta1
+    kind: Policy
+    rules:
+    - level: Metadata
+# 1.1.4 event limit
+- path: /opt/kubernetes/admission.yaml
+  owner: root:root
+  permissions: '0600'
+  content: |
+    apiVersion: apiserver.k8s.io/v1alpha1
+    kind: AdmissionConfiguration
+    plugins:
+    - name: EventRateLimit
+      path: /opt/kubernetes/event.yaml
+- path: /opt/kubernetes/event.yaml
+  owner: root:root
+  permissions: '0600'
+  content: |
+    apiVersion: eventratelimit.admission.k8s.io/v1alpha1
+    kind: Configuration
+    limits:
+    - type: Server
+      qps: 5000
+      burst: 20000
+# 1.4.12 etcd user
+groups:
+  - etcd
+users:
+  - default
+  - name: etcd
+    gecos: Etcd user
+    primary_group: etcd
+    homedir: /var/lib/etcd
+# 1.4.11 etcd data dir
+runcmd:
+  - chmod 0700 /var/lib/etcd
+  - usermod -G docker -a ubuntu
+  - sysctl -p /etc/sysctl.d/90-kubelet.conf
+```
+
+## Appendix B - Complete RKE `cluster.yml` Example
 
 ``` yaml
 nodes:
@@ -1150,6 +1266,7 @@ services:
       anonymous-auth: "false"
       feature-gates: "RotateKubeletServerCertificate=true"
       tls-cipher-suites: "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256"
+      generate_serving_certificate: true
   kube-api:
     pod_security_policy: true
     extra_args:
@@ -1315,7 +1432,7 @@ addons: |
     name: system:authenticated
 ```
 
-## Appendix B - Complete RKE Template Example
+## Appendix C - Complete RKE Template Example
 
 ``` yaml
 #

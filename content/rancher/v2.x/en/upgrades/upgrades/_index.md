@@ -4,10 +4,12 @@ weight: 1005
 ---
 This section contains information about how to upgrade your Rancher server to a newer version. Regardless if you installed in an air gap environment or not, the upgrade steps mainly depend on whether you have a single node or high-availability installation of Rancher. Select from the following options:
 
-- [Upgrading a Single Node Install]({{< baseurl >}}/rancher/v2.x/en/upgrades/upgrades/single-node/)
-- [Upgrading an HA Install]({{< baseurl >}}/rancher/v2.x/en/upgrades/upgrades/ha/)
+- [Upgrading Rancher installed with Docker]({{<baseurl>}}/rancher/v2.x/en/upgrades/upgrades/single-node/)
+- [Upgrading Rancher installed on a Kubernetes cluster]({{<baseurl>}}/rancher/v2.x/en/upgrades/upgrades/ha/)
 
 ### Known Upgrade Issues
+
+The following table lists some of the most noteworthy issues to be considered when upgrading Rancher. A more complete list of known issues for each Rancher version can be found in the release notes on [GitHub](https://github.com/rancher/rancher/releases) and on the [Rancher forums.](https://forums.rancher.com/c/announcements/12)
 
 Upgrade Scenario | Issue
 ---|---
@@ -17,12 +19,12 @@ Upgrading from v2.0.13 or earlier  | If your cluster's certificates have expired
 Upgrading from v2.0.7 or earlier | Rancher introduced the `system` project, which is a project that's automatically created to store important namespaces that Kubernetes needs to operate. During upgrade to v2.0.7+, Rancher expects these namespaces to be unassigned from all projects. Before beginning upgrade, check your system namespaces to make sure that they're unassigned to [prevent cluster networking issues]({{< baseurl >}}/rancher/v2.x/en/upgrades/upgrades/namespace-migration/#preventing-cluster-networking-issues).
 
 ### Caveats
-Upgrades _to_ or _from_ any chart in the [rancher-alpha repository]({{< baseurl >}}/rancher/v2.x/en/installation/server-tags/#helm-chart-repositories/) aren't supported.
+Upgrades _to_ or _from_ any chart in the [rancher-alpha repository]({{< baseurl >}}/rancher/v2.x/en/installation/options/server-tags/#helm-chart-repositories/) aren't supported.
 
 ### RKE Add-on Installs
 
 **Important: RKE add-on install is only supported up to Rancher v2.0.8**
 
-Please use the Rancher helm chart to install HA Rancher. For details, see the [HA Install - Installation Outline]({{< baseurl >}}/rancher/v2.x/en/installation/ha/#installation-outline).
+Please use the Rancher helm chart to install Rancher on a Kubernetes cluster. For details, see the [Kubernetes Install - Installation Outline]({{< baseurl >}}/rancher/v2.x/en/installation/k8s-install/#installation-outline).
 
 If you are currently using the RKE add-on install method, see [Migrating from a RKE add-on install]({{< baseurl >}}/rancher/v2.x/en/upgrades/upgrades/migrating-from-rke-add-on/) for details on how to move to using the helm chart.

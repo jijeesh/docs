@@ -65,10 +65,13 @@ ssh_agent_auth: true
 # List of registry credentials
 # If you are using a Docker Hub registry, you can omit the `url`
 # or set it to `docker.io`
+# is_default set to `true` will override the system default
+# registry set in the global settings
 private_registries:
-    - url: registry.com
-      user: Username
-      password: password
+     - url: registry.com
+       user: Username
+       password: password
+       is_default: true
 
 # Bastion/Jump host configuration
 bastion_host:
@@ -215,8 +218,7 @@ cloud_provider:
 # up on trying to get the job status after this timeout in seconds..
 addon_job_timeout: 30
 
-# There are several network plug-ins that work, but we default
-# to canal      
+# Specify network plugin-in (canal, calico, flannel, weave, or none)
 network:
     plugin: canal
 

@@ -18,13 +18,16 @@ Resources that you can assign directly to namespaces include:
 - [Registries]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/registries/)
 - [Secrets]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/secrets/)
 
->**Note:** Although you can assign role-based access to namespaces in the base version of Kubernetes, you cannot assign roles to namespaces in Rancher. Instead, assign role-based access at the project level.
+To manage permissions in a vanilla Kubernetes cluster, cluster admins configure role-based access policies for each namespace. With Rancher, user permissions are assigned on the project level instead, and permissions are automatically inherited by any namespace owned by the particular project.
+
+> **Note:** If you create a namespace with `kubectl`, it may be unusable because `kubectl` doesn't require your new namespace to be scoped within a project that you have access to. If your permissions are restricted to the project level, it is better to [create a namespace through Rancher]({{<baseurl>}}/rancher/v2.x/en/project-admin/namespaces/#creating-namespaces) to ensure that you will have permission to access the namespace.
+
 
 ### Creating Namespaces
 
 Create a new namespace to isolate apps and resources in a project.
 
->**Tip:** When working with project resources that you can assign to a namespace (i.e., [workloads]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/workloads/deploy-workloads/), [certificates]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/certificates/), [ConfigMaps]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/configmaps), etc.) you can create a namespace on the fly.
+When working with project resources that you can assign to a namespace (i.e., [workloads]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/workloads/deploy-workloads/), [certificates]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/certificates/), [ConfigMaps]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/configmaps), etc.) you can create a namespace on the fly.
 
 1. From the **Global** view, open the project where you want to create a namespace.
 
@@ -60,21 +63,6 @@ Cluster admins and members may occasionally need to move a namespace to another 
 
 ### Editing Namespace Resource Quotas
 
-If there is a [resource quota]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/projects-and-namespaces/resource-quotas) configured for a project, you can override the namespace default limit to provide a specific namespace with access to more (or less) project resources.
+You can always override the namespace default limit to provide a specific namespace with access to more (or less) project resources.
 
-1. From the **Global** view, open the cluster that contains the namespace for which you want to edit the resource quota.
-
-1. From the main menu, select **Projects/Namespaces**.
-
-1. Find the namespace for which you want to edit the resource quota. Select **Ellipsis (...) > Edit**.
-
-1. Edit the Resource Quota **Limits**.  These limits determine the resources available to the namespace. The limits must be set within the configured project limits.
-
-    For more information about each **Resource Type**, see [Resource Quota Types]({{< baseurl >}}/rancher/v2.x/en/k8s-in-rancher/projects-and-namespaces/resource-quotas/#resource-quota-types).
-
-    >**Note:**
-    >
-    >- If a resource quota is not configured for the project, these options will not be available.
-    >- If you enter limits that exceed the configured project limits, Rancher will not let you save your edits.
-
-**Result:** The namespace's default resource quota is overwritten with your override.
+For more information, see how to [edit namespace resource quotas]({{< baseurl >}}/rancher/v2.x/en/project-admin//resource-quotas/override-namespace-default/#editing-namespace-resource-quotas).

@@ -1,5 +1,5 @@
 ---
-title: Configuring Custom Clusters for Windows
+title: Launching Kubernetes on Windows Clusters
 weight: 2240
 ---
 
@@ -42,16 +42,10 @@ For a custom cluster, the general node requirements for networking, operating sy
 
 ### OS and Docker Requirements
 
-In order to add Windows worker nodes to a cluster, the node must be running one of the following Windows Server versions and the corresponding version of Docker:
+In order to add Windows worker nodes to a cluster, the node must be running one of the following Windows Server versions and the corresponding version of Docker Engine - Enterprise Edition (EE):
 
-- Windows Server core version 1809 and Docker 18.09
-- Windows server core version 1903 and Docker 19.03
-
-The nodes must run Docker Engine - Enterprise Edition (EE).
-
-Nodes with Windows Server core version 1809 should use Docker EE-basic 18.09.
-
-Nodes with Windows Server core version 1903 should use Docker EE-basic 19.03.
+- Nodes with Windows Server core version 1809 should use Docker EE-basic 18.09 or Docker EE-basic 19.03.
+- Nodes with Windows Server core version 1903 should use Docker EE-basic 19.03.
 
 > **Notes:**
 >
@@ -160,7 +154,7 @@ Windows support only be enabled if the cluster uses Kubernetes v1.15+ and the Fl
 
 1. Click **Next**.
 
-> **Important:** For **Host Gateway (L2bridge)** networking, it's best to use the same Layer 2 network for all nodes. Otherwise, you need to configure the route rules for them. For details, refer to the [documentation on configuring cloud-hosted VM routes.]({{<baseurl>}}/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/host-gateway-requirements/#cloud-hosted-vm-routes-configuration) You will also need to [disable private IP address checks]({{<baseurl>}}/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/host-gateway-requirements/#disabling-private-ip-address-checks) if you are using Amazon EC2, Google GCE, or Azure VM.
+> **Important:** For <b>Host Gateway (L2bridge)</b> networking, it's best to use the same Layer 2 network for all nodes. Otherwise, you need to configure the route rules for them. For details, refer to the [documentation on configuring cloud-hosted VM routes.]({{<baseurl>}}/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/host-gateway-requirements/#cloud-hosted-vm-routes-configuration) You will also need to [disable private IP address checks]({{<baseurl>}}/rancher/v2.x/en/cluster-provisioning/rke-clusters/windows-clusters/host-gateway-requirements/#disabling-private-ip-address-checks) if you are using Amazon EC2, Google GCE, or Azure VM.
 
 # 3. Add Nodes to the Cluster
 
@@ -235,6 +229,13 @@ You can add Windows hosts to a custom cluster by editing the cluster and choosin
 1. Optional: Repeat these instructions if you want to add more Windows nodes to your cluster.
 
 **Result:** The **Worker** role is installed on your Windows host, and the node registers with Rancher. It may take a few minutes for the node to be registered in your cluster. You now have a Windows Kubernetes cluster.
+
+### Optional Next Steps
+
+After creating your cluster, you can access it through the Rancher UI. As a best practice, we recommend setting up these alternate ways of accessing your cluster:
+
+- **Access your cluster with the kubectl CLI:** Follow [these steps]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/#accessing-clusters-with-kubectl-on-your-workstation) to access clusters with kubectl on your workstation. In this case, you will be authenticated through the Rancher server’s authentication proxy, then Rancher will connect you to the downstream cluster. This method lets you manage the cluster without the Rancher UI.
+- **Access your cluster with the kubectl CLI, using the authorized cluster endpoint:** Follow [these steps]({{<baseurl>}}/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/#authenticating-directly-with-a-downstream-cluster) to access your cluster with kubectl directly, without authenticating through the Rancher server. We recommend setting up this alternative method to access your cluster so that in case you can’t connect to Rancher, you can still access the cluster.
 
 # Configuration for Storage Classes in Azure
 

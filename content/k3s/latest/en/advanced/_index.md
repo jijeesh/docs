@@ -1,23 +1,136 @@
 ---
-title: "Advanced Options"
-weight: 3
+title: "Advanced Options and Configuration"
+weight: 45
 aliases:
   - /k3s/latest/en/running/
+  - /k3s/latest/en/configuration/
 ---
 
-This section contains advanced information describing the different ways you can run and manage k3s.
+This section contains advanced information describing the different ways you can run and manage K3s:
 
-Starting the Server
-------------------
+- [Auto-deploying manifests](#auto-deploying-manifests)
+- [Using Docker as the container runtime](#using-docker-as-the-container-runtime)
+- [Secrets Encryption Config (Experimental)](#secrets-encryption-config-experimental)
+- [Running K3s with RootlessKit (Experimental)](#running-k3s-with-rootlesskit-experimental)
+- [Node labels and taints](#node-labels-and-taints)
+- [Starting the server with the installation script](#starting-the-server-with-the-installation-script)
+- [Additional preparation for Alpine Linux setup](#additional-preparation-for-alpine-linux-setup)
+- [Running K3d (K3s in Docker) and docker-compose](#running-k3d-k3s-in-docker-and-docker-compose)
+- [Raspbian Buster - Enable legacy iptables](#raspbian-buster---enable-legacy-iptables)
+
+# Auto-Deploying Manifests
+
+Any file found in `/var/lib/rancher/k3s/server/manifests` will automatically be deployed to Kubernetes in a manner similar to `kubectl apply`.
+
+For information about deploying Helm charts, refer to the section about [Helm.](../helm)
+
+# Using Docker as the Container Runtime
+
+K3s includes and defaults to [containerd,](https://containerd.io/) an industry-standard container runtime. If you want to use Docker instead of containerd then you simply need to run the agent with the `--docker` flag.
+
+K3s will generate config.toml for containerd in `/var/lib/rancher/k3s/agent/etc/containerd/config.toml`. For advanced customization for this file you can create another file called `config.toml.tmpl` in the same directory and it will be used instead.
+
+The `config.toml.tmpl` will be treated as a Golang template file, and the `config.Node` structure is being passed to the template, the following is an example on how to use the structure to customize the configuration file https://github.com/rancher/k3s/blob/master/pkg/agent/templates/templates.go#L16-L32
+
+# Secrets Encryption Config (Experimental)
+As of v1.17.4+k3s1, K3s added the experimental feature of enabling secrets encryption at rest by passing the flag `--secrets-encryption` on a server, this flag will do the following automatically:
+
+- Generate an AES-CBC key
+- Generate an encryption config file with the generated key
+
+```
+{
+  "kind": "EncryptionConfiguration",
+  "apiVersion": "apiserver.config.k8s.io/v1",
+  "resources": [
+    {
+      "resources": [
+        "secrets"
+      ],
+      "providers": [
+        {
+          "aescbc": {
+            "keys": [
+              {
+                "name": "aescbckey",
+                "secret": "xxxxxxxxxxxxxxxxxxx"
+              }
+            ]
+          }
+        },
+        {
+          "identity": {}
+        }
+      ]
+    }
+  ]
+}
+```
+
+- Pass the config to the KubeAPI as encryption-provider-config
+
+Once enabled any created secret will be encrypted with this key. Note that if you disable encryption then any encrypted secrets will not be readable until you enable encryption again.
+
+# Running K3s with RootlessKit (Experimental)
+
+> **Warning:** This feature is experimental.
+
+RootlessKit is a kind of Linux-native "fake root" utility, made for mainly [running Docker and Kubernetes as an unprivileged user,](https://github.com/rootless-containers/usernetes) so as to protect the real root on the host from potential container-breakout attacks.
+
+Initial rootless support has been added but there are a series of significant usability issues surrounding it.
+
+We are releasing the initial support for those interested in rootless and hopefully some people can help to improve the usability.  First, ensure you have a proper setup and support for user namespaces.  Refer to the [requirements section](https://github.com/rootless-containers/rootlesskit#setup) in RootlessKit for instructions.
+In short, latest Ubuntu is your best bet for this to work.
+
+### Known Issues with RootlessKit
+
+* **Ports**
+
+    When running rootless a new network namespace is created.  This means that K3s instance is running with networking fairly detached from the host.  The only way to access services run in K3s from the host is to set up port forwards to the K3s network namespace. We have a controller that will automatically bind 6443 and service port below 1024 to the host with an offset of 10000. 
+
+    That means service port 80 will become 10080 on the host, but 8080 will become 8080 without any offset.
+
+    Currently, only `LoadBalancer` services are automatically bound.
+
+* **Daemon lifecycle**
+
+    Once you kill K3s and then start a new instance of K3s it will create a new network namespace, but it doesn't kill the old pods.  So you are left
+    with a fairly broken setup.  This is the main issue at the moment, how to deal with the network namespace.
+
+    The issue is tracked in https://github.com/rootless-containers/rootlesskit/issues/65
+
+* **Cgroups**
+
+    Cgroups are not supported.
+
+### Running Servers and Agents with Rootless
+
+Just add `--rootless` flag to either server or agent. So run `k3s server --rootless` and then look for the message `Wrote kubeconfig [SOME PATH]` for where your kubeconfig file is.
+
+For more information about setting up the kubeconfig file, refer to the [section about cluster access.](../cluster-access)
+
+> Be careful, if you use `-o` to write the kubeconfig to a different directory it will probably not work. This is because the K3s instance in running in a different mount namespace.
+
+# Node Labels and Taints
+
+K3s agents can be configured with the options `--node-label` and `--node-taint` which adds a label and taint to the kubelet. The two options only add labels and/or taints [at registration time,]({{<baseurl>}}/k3s/latest/en/installation/install-options/#node-labels-and-taints-for-agents) so they can only be added once and not changed after that again by running K3s commands.
+
+If you want to change node labels and taints after node registration you should use `kubectl`. Refer to the official Kubernetes documentation for details on how to add [taints](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) and [node labels.](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node)
+
+# Starting the Server with the Installation Script
 
 The installation script will auto-detect if your OS is using systemd or openrc and start the service.
-When running with openrc logs will be created at `/var/log/k3s.log`, or with systemd in `/var/log/syslog` and viewed using `journalctl -u k3s`. An example of installing and auto-starting with the install script:
+When running with openrc, logs will be created at `/var/log/k3s.log`. 
+
+When running with systemd, logs will be created in `/var/log/syslog` and viewed using `journalctl -u k3s`.
+
+An example of installing and auto-starting with the install script:
 
 ```bash
 curl -sfL https://get.k3s.io | sh -
 ```
 
-When running the server manually you should get an output similar to:
+When running the server manually you should get an output similar to the following:
 
 ```
 $ k3s server
@@ -38,29 +151,11 @@ INFO[2019-01-22T15:16:20.541049100-07:00] Run: k3s kubectl
 The output will likely be much longer as the agent will create a lot of logs. By default the server
 will register itself as a node (run the agent).
 
-Alpine Linux
-------------
+# Additional Preparation for Alpine Linux Setup
 
-In order to pre-setup Alpine Linux you have to go through the following steps:
+In order to set up Alpine Linux, you have to go through the following preparation:
 
-```bash
-echo "cgroup /sys/fs/cgroup cgroup defaults 0 0" >> /etc/fstab
-
-cat >> /etc/cgconfig.conf <<EOF
-mount {
-cpuacct = /cgroup/cpuacct;
-memory = /cgroup/memory;
-devices = /cgroup/devices;
-freezer = /cgroup/freezer;
-net_cls = /cgroup/net_cls;
-blkio = /cgroup/blkio;
-cpuset = /cgroup/cpuset;
-cpu = /cgroup/cpu;
-}
-EOF
-```
-
-Then update **/etc/update-extlinux.conf** by adding:
+Update **/etc/update-extlinux.conf** by adding:
 
 ```
 default_kernel_opts="...  cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory"
@@ -73,21 +168,23 @@ update-extlinux
 reboot
 ```
 
-After rebooting:
+# Running K3d (K3s in Docker) and docker-compose
 
-- download **k3s** to **/usr/local/bin/k3s**
-- create an openrc file in **/etc/init.d**
+[k3d](https://github.com/rancher/k3d) is a utility designed to easily run K3s in Docker.
 
-Running in Docker (and docker-compose)
------------------
+It can be installed via the the [brew](https://brew.sh/) utility on MacOS:
 
-[k3d](https://github.com/rancher/k3d) is a utility designed to easily run k3s in Docker. It can be installed via the [brew](https://brew.sh/) utility for MacOS.
+```
+brew install k3d
+```
 
-`rancher/k3s` images are also available to run k3s server and agent from Docker.  A `docker-compose.yml` is in the root of the k3s repo that
-serves as an example of how to run k3s from Docker.  To run from `docker-compose` from this repo run:
+`rancher/k3s` images are also available to run the K3s server and agent from Docker. 
 
-    docker-compose up --scale node=3
+A `docker-compose.yml` is in the root of the K3s repo that serves as an example of how to run K3s from Docker. To run from `docker-compose` from this repo, run:
+
+    docker-compose up --scale agent=3
     # kubeconfig is written to current dir
+
     kubectl --kubeconfig kubeconfig.yaml get node
 
     NAME           STATUS   ROLES    AGE   VERSION
@@ -95,83 +192,24 @@ serves as an example of how to run k3s from Docker.  To run from `docker-compose
     d54c8b17c055   Ready    <none>   11s   v1.13.2-k3s2
     db7a5a5a5bdd   Ready    <none>   12s   v1.13.2-k3s2
 
-To run the agent only in Docker, use `docker-compose up node`. Alternatively the Docker run command can also be used;
+To run the agent only in Docker, use `docker-compose up agent`.
+
+Alternatively the `docker run` command can also be used:
 
     sudo docker run \
-            -d --tmpfs /run \
-            --tmpfs /var/run \
-            -e K3S_URL=${SERVER_URL} \
-            -e K3S_TOKEN=${NODE_TOKEN} \
-            --privileged rancher/k3s:vX.Y.Z
+      -d --tmpfs /run \
+      --tmpfs /var/run \
+      -e K3S_URL=${SERVER_URL} \
+      -e K3S_TOKEN=${NODE_TOKEN} \
+      --privileged rancher/k3s:vX.Y.Z
 
-Air-Gap Support
----------------
 
-k3s supports pre-loading of containerd images by placing them in the `images` directory for the agent before starting, for example:
-```sh
-sudo mkdir -p /var/lib/rancher/k3s/agent/images/
-sudo cp ./k3s-airgap-images-$ARCH.tar /var/lib/rancher/k3s/agent/images/
+# Raspbian Buster - enable legacy iptables
+
+Raspbian Buster defaults to using `nftables` instead of `iptables`.  **K3S** networking features require `iptables` and do not work with `nftables`.  Follow the steps below to switch configure **Buster** to use `legacy iptables`:
 ```
-Images needed for a base install are provided through the releases page, additional images can be created with the `docker save` command.
-
-Offline Helm charts are served from the `/var/lib/rancher/k3s/server/static` directory, and Helm chart manifests may reference the static files with a `%{KUBERNETES_API}%` templated variable. For example, the default traefik manifest chart installs from `https://%{KUBERNETES_API}%/static/charts/traefik-X.Y.Z.tgz`.
-
-If networking is completely disabled k3s may not be able to start (ie ethernet unplugged or wifi disconnected), in which case it may be necessary to add a default route. For example:
-```sh
-sudo ip -c address add 192.168.123.123/24 dev eno1
-sudo ip route add default via 192.168.123.1
+sudo iptables -F
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+sudo reboot
 ```
-
-k3s additionally provides a `--resolv-conf` flag for kubelets, which may help with configuring DNS in air-gap networks.
-
-Upgrades
---------
-
-To upgrade k3s from an older version you can re-run the installation script using the same flags, for example:
-
-```sh
-curl -sfL https://get.k3s.io | sh -
-```
-
-If you want to upgrade to specific version you can run the following command:
-
-```sh
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=vX.Y.Z-rc1 sh -
-```
-
-Or to manually upgrade k3s:
-
-1. Download the desired version of k3s from [releases](https://github.com/rancher/k3s/releases/latest)
-2. Install to an appropriate location (normally `/usr/local/bin/k3s`)
-3. Stop the old version
-4. Start the new version
-
-Restarting k3s is supported by the installation script for systemd and openrc.
-To restart manually for systemd use:
-```sh
-sudo systemctl restart k3s
-```
-
-To restart manually for openrc use:
-```sh
-sudo service k3s restart
-```
-
-Upgrading an air-gap environment can be accomplished in the following manner:
-
-1. Download air-gap images and install if changed
-2. Install new k3s binary (from installer or manual download)
-3. Restart k3s (if not restarted automatically by installer)
-
-Uninstalling
-------------
-
-If you installed k3s with the help of `install.sh` script an uninstall script is generated during installation, which will be created on your server node at `/usr/local/bin/k3s-uninstall.sh` (or as `k3s-agent-uninstall.sh`).
-
-Hyperkube
----------
-
-k3s is bundled in a nice wrapper to remove the majority of the headache of running k8s. If
-you don't want that wrapper and just want a smaller k8s distro, the releases includes
-the `hyperkube` binary you can use.  It's then up to you to know how to use `hyperkube`. If
-you want individual binaries you will need to compile them yourself from source.
