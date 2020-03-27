@@ -1,0 +1,335 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+// .container {
+//   max-width: $max-width; /* 1 */
+//   margin-left: auto; /* 2 */
+//   margin-right: auto; /* 2 */
+//   padding-left: 20px; /* 3 */
+//   padding-left: 20px; /* 3 */
+//   padding-right: 20px; /* 3 */
+//   width: 100%; /* 1 */
+//  }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+//position helpsers
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+.inline-block {
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+//xs padding
+.p-a-xs {
+  padding: $spacer-xs;
+}
+
+.p-t-xs {
+  padding-top: $spacer-xs;
+}
+
+.p-r-xs {
+  padding-right: $spacer-xs;
+}
+
+.p-b-xs {
+  padding-bottom: $spacer-xs;
+}
+
+.p-l-xs {
+  padding-left: $spacer-xs;
+}
+
+.p-h-xs {
+  padding-left: $spacer-xs;
+  padding-right: $spacer-xs;
+}
+
+.p-v-xs {
+  padding-top: $spacer-xs;
+  padding-bottom: $spacer-xs;
+}
+
+//sml padding
+.p-a-sm {
+  padding: $spacer-sm;
+}
+
+.p-t-sm {
+  padding-top: $spacer-sm;
+}
+
+.p-r-sm {
+  padding-right: $spacer-sm;
+}
+
+.p-b-sm {
+  padding-bottom: $spacer-sm;
+}
+
+.p-l-sm {
+  padding-left: $spacer-sm;
+}
+
+.p-h-sm {
+  padding-left: $spacer-sm;
+  padding-right: $spacer-sm;
+}
+
+.p-v-sm {
+  padding-top: $spacer-sm;
+  padding-bottom: $spacer-sm;
+}
+
+//med padding
+.p-a-md {
+  padding: $spacer-md;
+}
+
+.p-t-md {
+  padding-top: $spacer-md;
+}
+
+.p-r-md {
+  padding-right: $spacer-md;
+}
+
+.p-b-md {
+  padding-bottom: $spacer-md;
+}
+
+.p-l-md {
+  padding-left: $spacer-md;
+}
+
+.p-h-md {
+  padding-right: $spacer-md;
+  padding-left: $spacer-md;
+}
+
+.p-v-md {
+  padding-top: $spacer-md;
+  padding-bottom: $spacer-md;
+}
+
+//large padding
+.p-a-lg {
+  padding: $spacer-lg;
+}
+
+.p-t-lg {
+  padding-top: $spacer-lg;
+}
+
+.p-r-lg {
+  padding-right: $spacer-lg;
+}
+
+.p-b-lg {
+  padding-bottom: $spacer-lg;
+}
+
+.p-l-lg {
+  padding-left: $spacer-lg;
+}
+
+.p-h-lg {
+  padding-right: $spacer-lg;
+  padding-left: $spacer-lg;
+}
+
+.p-v-lg {
+  padding-top: $spacer-lg;
+  padding-bottom: $spacer-lg;
+}
+
+//sml margin
+.m-a-xs {
+  margin: $spacer-xs;
+}
+
+.m-t-xs {
+  margin-top: $spacer-xs;
+}
+
+.m-r-xs {
+  margin-right: $spacer-xs;
+}
+
+.m-b-xs {
+  margin-bottom: $spacer-xs;
+}
+
+.m-l-xs {
+  margin-left: $spacer-xs;
+}
+
+.m-h-xs {
+  margin-left: $spacer-xs;
+  margin-right: $spacer-xs;
+}
+
+.m-v-xs {
+  margin-top: $spacer-xs;
+  margin-bottom: $spacer-xs;
+}
+
+//sml margin
+.m-a-sm {
+  margin: $spacer-sm;
+}
+
+.m-t-sm {
+  margin-top: $spacer-sm;
+}
+
+.m-r-sm {
+  margin-right: $spacer-sm;
+}
+
+.m-b-sm {
+  margin-bottom: $spacer-sm;
+}
+
+.m-l-sm {
+  margin-left: $spacer-sm;
+}
+
+.m-h-sm {
+  margin-left: $spacer-sm;
+  margin-right: $spacer-sm;
+}
+
+.m-v-sm {
+  margin-top: $spacer-sm;
+  margin-bottom: $spacer-sm;
+}
+
+//med margin
+.m-a-md {
+  margin: $spacer-md;
+}
+
+.m-t-md {
+  margin-top: $spacer-md;
+}
+
+.m-r-md {
+  margin-right: $spacer-md;
+}
+
+.m-b-md {
+  margin-bottom: $spacer-md;
+}
+
+.m-l-md {
+  margin-left: $spacer-md;
+}
+
+.m-h-md {
+  margin-right: $spacer-md;
+  margin-left: $spacer-md;
+}
+
+.m-v-md {
+  margin-top: $spacer-md;
+  margin-bottom: $spacer-md;
+}
+
+//large margin
+.m-a-lg {
+  margin: $spacer-lg;
+}
+
+.m-t-lg {
+  margin-top: $spacer-lg;
+}
+
+.m-r-lg {
+  margin-right: $spacer-lg;
+}
+
+.m-b-lg {
+  margin-bottom: $spacer-lg;
+}
+
+.m-l-lg {
+  margin-left: $spacer-lg;
+}
+
+.m-h-lg {
+  margin-right: $spacer-lg;
+  margin-left: $spacer-lg;
+}
+
+.m-v-lg {
+  margin-top: $spacer-lg;
+  margin-bottom: $spacer-lg;
+}
+
+//no space
+
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  overflow: auto;
+}

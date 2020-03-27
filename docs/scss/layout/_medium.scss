@@ -1,0 +1,142 @@
+///991px
+@media all and (max-width: map-get($breakpoints, medium)) {
+  h1, h2, h3, h4, h5, h6 {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-wrap: normal;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  //images in col
+   *[class*=" col-"] {
+     img {
+      max-width: 100%;
+      height: auto;
+     }
+   }
+
+  a, p, li > * {
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+
+      -ms-word-break: break-all;
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all;
+      /* Instead use this non-standard one: */
+      word-break: break-word;
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+  }
+
+  .fixed-buttons {
+    display: none;
+  }
+
+  .hidden-md {
+    display: none;
+  }
+
+  .border-right > * {
+    border-bottom: solid 2px $light-grey;
+    border-right: none;
+  }
+
+
+  .cta-banner {
+    margin: $spacer-xs auto;
+    padding: $spacer-xs;
+  }
+
+  .bg-link .border-right > * {
+    border-bottom: solid 2px #268bcf;
+    border-right: none;
+    padding: $spacer-sm 0;
+  }
+
+  .pagination li {
+    padding: .5em;
+  }
+
+  //spacing
+  *[class*="p-a-"],
+  *[class*="p-v-"],
+  *[class*="p-h-"],
+  *[class*="p-t-"],
+  *[class*="p-b-"],
+  *[class*="p-l-"],
+  *[class*="p-r-"]     {
+    padding: $spacer-xs;
+  }
+
+  *[class*="m-a-"],
+  *[class*="m-v-"],
+  *[class*="m-h-"],
+  *[class*="m-t-"],
+  *[class*="m-b-"],
+  *[class*="m-l-"],
+  *[class*="m-r-"]     {
+    margin: $spacer-xs;
+  }
+
+  // *[class^="text-"],
+  // *[class^="text-"] > *,
+  // ol,
+  ul,
+  table {
+    font-size: 1.25em;
+    line-height: 1.25em;
+  }
+
+  .text-right {
+    text-align: left;
+    > * {
+      text-align: left;
+    }
+  }
+  .sticky #TableOfContents{
+    display: none;
+  }
+  //homepage
+  .add-cluster {
+    background-image: url()!important;
+  }
+
+  .add-cluster .wrapper .p-v-lg {
+    padding: $spacer-xs 0;
+  }
+
+  .logo-bg {
+    display: none;
+  }
+
+  //vertical tabs
+  .content-tabs.vertical-tabs {
+    display: block;
+    padding: $spacer-md;
+  }
+
+  .content-tabs.vertical-tabs .vertical-tab-nav {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .content-tabs.vertical-tabs .tab-content {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .tab-page-image img {
+    display: none;
+  }
+}

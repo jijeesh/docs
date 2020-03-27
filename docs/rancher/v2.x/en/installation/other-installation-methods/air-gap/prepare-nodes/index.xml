@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1. Prepare your Node(s) on Rancher Labs</title>
+    <link>http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/prepare-nodes/</link>
+    <description>Recent content in 1. Prepare your Node(s) on Rancher Labs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://jijeesh.github.io/docs/rancher/v2.x/en/installation/other-installation-methods/air-gap/prepare-nodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

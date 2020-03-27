@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html class="" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>
+      
+          
+              External etcd
+          
+      
+  </title>
+
+  <link rel="icon" type="image/png" href="/docs/img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="http://jijeesh.github.io/docs/sass/app.min.css?1585318203"/>
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  <script charset="utf-8" type="text/javascript" src="http://jijeesh.github.io/docs/js/vendor.min.js?1585318203"></script>
+
+ 
+  <script defer charset="utf-8" type="text/javascript" src="http://jijeesh.github.io/docs/js/instantsearch.min.js?1585318203"></script>
+
+  
+  
+    
+  <script charset="utf-8" type="text/javascript" src="http://jijeesh.github.io/docs/js/app.min.js?1585318203"></script>
+
+  
+  
+
+  <link href="http://jijeesh.github.io/docs/rke/latest/en/config-options/services/external-etcd/index.xml" rel="alternate" type="application/rss+xml" title="External etcd" />
+
+  
+    <meta name="description" content="By default, RKE will launch etcd servers, but RKE also supports being able to use an external etcd. RKE only supports connecting to a TLS enabled etcd setup.
+ Note: RKE will not accept having external etcd servers in conjunction with nodes with the etcd role.
+ services:etcd:path:/etcdclusterexternal_urls:-https://etcd-example.com:2379ca_cert:|- -----BEGIN CERTIFICATE-----xxxxxxxxxx-----ENDCERTIFICATE----- cert: |------BEGINCERTIFICATE----- xxxxxxxxxx-----ENDCERTIFICATE----- key: |------BEGINPRIVATEKEY----- xxxxxxxxxx-----ENDPRIVATEKEY----- External etcd Options Path The path defines the location of where the etcd cluster is on the endpoints."/>
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:title" content="External etcd" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:creator" content="" />
+
+  
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="External etcd">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="http://jijeesh.github.io/docs/rke/latest/en/config-options/services/external-etcd/" />
+  <meta property="og:site_name" content="Rancher Labs" />
+  <meta property="og:image" content="http://jijeesh.github.io/docs/img/logo-square.png" />
+  
+  
+
+
+
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-57KS2MW');</script>
+  
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56382716-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+  </script>
+  
+</head>
+<body lang="en" class="rke">
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57KS2MW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+  <a name="top"></a>
+
+
+<div class="main"> 
+    <header>
+        <nav>
+            <div class="mobile-header-container">
+                <div class="mobile-nav-header">
+                    <div class="logo">
+                        <a href="/"><img class="logo-image" src="/imgs/rancher-logo-horiz-color.png" alt="The Logo of Rancher: an Open Source Kubernetes Multi Cluster Management Platform"></a>
+                    </div>
+
+                    <div class="mobile-search"><a href="#" class="search-open" data-launch-id="open-search"><img class="icon" src="/imgs/icon-search-mobile.svg" alt="Gray Search Icon"></a></div>
+
+                    <div class="mobile-menu-opener">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="nav-mobile-menus jquery-accordion-menu">
+                    <ul class="mobile-menus-wrap">
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Why Rancher?</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li class=""><a href="/what-is-rancher/overview/">Why Rancher?</a></li>
+                                <li class=""><a href="/kubernetes/">Why Kubernetes?</a></li>
+                                <li class=""><a href="/what-is-rancher/what-rancher-adds-to-kubernetes/">What Rancher Adds to Kubernetes</a></li>
+                                <li class=""><a href="/what-is-rancher/how-is-rancher-different/">The Rancher Difference</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Products</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/products/">Overview</a></li>
+                                <li><a href="/products/rancher/">Rancher</a></li>
+                                <li><a href="https://k3s.io" target="_blank">k3s</a></li>
+                                <li><a href="https://rio.io" target="_blank">Rio</a></li>
+                                <li><a href="/request-a-demo/">Request a demo</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Customers</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/customers/illumina/">Illumina</a></li>
+                                <li><a href="/customers/sling/">Sling TV</a></li>
+                                <li><a href="/customers/eoc/">EOC</a></li>
+                                <li><a href="/customers/deutsche-bahn/">Deutsche Bahn</a></li>
+                                <li><a href="/customers/">See All Customer Stories</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Community</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/community">Overview</a></li>
+                                <li><a href="/learning-paths">Learning Paths</a></li>
+                                <li><a href="/training/">Training</a></li>
+                                <li><a href="/tutorials/">Tutorials</a></li>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/online-meetups/">Online Meetups</a></li>
+                                <li><a href="/rodeos/">Rancher Rodeos</a></li>
+                                <li><a href="/kubernetes-master-class/">Kubernetes Master Classes</a></li>
+                                
+                                <li><a href="/quick-start/">Getting Started Guide</a></li>
+                                <li><a href="https://forums.rancher.com/">Forums</a></li>
+                                <li><a href="http://slack.rancher.io/">Slack</a></li>
+                                <li><a href="https://github.com/rancher">Github</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                        <a class="mobile-menu" href="#">Resources</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/docs">Docs</a></li>
+                                <li><a href="/resources/#analyst-reports">Analyst Reports</a></li>
+                                <li><a href="/resources/#whitepapers">White Papers</a></li>
+                                <li><a href="/resources/#ebooks">Ebooks</a></li>
+                                <li><a href="/resources/#videos">Videos</a></li>
+                                <li><a href="/resources/#podcasts">Podcasts</a></li>
+                                <li><a href="/blog/">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                        <a class="mobile-menu" href="#">Projects</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/rancher-os/">RancherOS</a></li>
+                                <li><a href="http://k3os.io/" target="_blank">k3OS</a></li>
+                                <li><a href="http://submariner.io/" target="_blank">Submariner</a></li>
+                                <li><a href="https://longhorn.io/" target="_blank">Longhorn</a></li>
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-item">
+                            <a class="mobile-menu" href="#">Company</a>
+
+                            <ul class="submenu submenus-wrap">
+                                <li><a href="/about/">About us</a></li>
+                                <li><a href="/partners/">Partners</a></li>
+                                <li><a href="/press/">Press</a></li>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/careers/">Careers</a></li>
+                                <li><a href="/blog/">Blog</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="mobile-menu-item option-menu"><a href="/docs/">Docs</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/support">Support</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/request-a-demo/">Request a demo</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/contact/">Contact</a></li>
+                        <li class="mobile-menu-item option-menu"><a href="/pricing/">Pricing</a></li>
+                        <li class="mobile-menu-item option-menu get-started"><a href="/quick-start/">Get started</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="header-container">
+                <div class="header-wrap">
+                    <div class="header-option-menus">
+                        <ul>
+                            <li><a href="/docs/">Docs</a></li>
+                            <li><a href="/request-a-demo/">Request a demo</a></li>
+                            <li><a href="/pricing/">Pricing</a></li>
+                            <li><a href="/support">Support</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                            <li class="search"><a href="#" class="search-open" data-launch-id="open-search"><img class="icon" src="/imgs/icon-search.svg"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="header-primary-menus">
+                        <div class="logo">
+                            <a href="/"><img class="logo-image" src="/imgs/rancher-logo-horiz-color.png" alt="Rancher Logo"></a>
+                        </div>
+
+                        <div class="primary-menus">
+                            <ul class="primary-menus-wrap">
+                                <li class='primary-menu-item menu-why_rancher '>
+                                    <a class="primary-menu" href="/what-is-rancher/overview">Why RANCHER?</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <li class="menus-container">
+                                                        <a href="/what-is-rancher/overview/">
+                                                            <span>Why Rancher?</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/kubernetes/">
+                                                            <span>Why Kubernetes?</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/what-is-rancher/what-rancher-adds-to-kubernetes/">
+                                                            <span>What Rancher Adds to Kubernetes </span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/what-is-rancher/how-is-rancher-different/">
+                                                            <span>The Rancher Difference </span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-products '>
+                                    <a class="primary-menu" href="/products">Products</a>
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col-12 right">
+
+                                                    <ul>
+                                                        <li class="menus-container">
+                                                            <a href="/products">
+                                                                <span>Overview</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                            <a href="/products/rancher/" class="menu-sub-block-item">
+                                                                <span>Rancher</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                            </a>
+                                                            <a href="/products/rke/" class="menu-sub-block-item">
+                                                                <span>RKE</span>
+
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                            </a>
+
+                                                            <a href="https://k3s.io" class="menu-sub-block-item" target="_blank">
+                                                                <span>K3s <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                                            </svg>
+                                                            </span>
+
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                            </a>
+                                                            <a href="https://rio.io" class="menu-sub-block-item" target="_blank">
+                                                                <span>Rio <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></span>
+
+
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"></path>
+                                                                    <path d="m24.5 17h-15"></path>
+                                                                </g>
+                                                            </svg>
+                                                            </a>
+
+                                                        </li>
+
+                                                    </ul>
+
+                                            <div class="primary-menu-blocks primary-menu-blocks-join">
+                                                <div class="menus-container menu-container-button">
+                                                    <a class="box" href="/request-a-demo/">
+                                                        <span>Request a demo</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-customers '>
+                                    <a class="primary-menu" href="/customers">Customers</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col left">
+                                                    <li class="feature-container single split-half">
+                                                        <div class="label">Featured</div>
+
+                                                        <div class="article-item">
+                                                            <div class="article-thumbmail">
+                                                                <img class="image" src="/img/header-customers-featured-thumbnail.png" alt="A Male Scientist in a White Lab Coat Looking Into a Microscope">
+                                                            </div>
+
+                                                            <div class="article-texts">
+                                                                <a href="/customers/illumina/">
+                                                                    <h2 class="title-label">Illumina</h2>
+                                                                    <p class="description-label">
+                                                                        Illumina Innovates with Rancher and Kubernetes
+
+                                                                        <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                            <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                                <path d="m19.5 12 5 5-5 5"/>
+                                                                                <path d="m24.5 17h-15"/>
+                                                                            </g>
+                                                                        </svg>
+                                                                    </p>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div class="col right">
+                                                    <li class="menus-container">
+                                                        <div class="label">More Customers</div>
+
+                                                        <a href="/customers/sling/">
+                                                            <span>Sling TV</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/customers/eoc/">
+                                                            <span>EOC</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/customers/deutsche-bahn/">
+                                                            <span>Deutsche Bahn</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a class="box" href="/customers/">
+                                                            <span>See All Customer Stories</span>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-community '>
+                                    <a class="primary-menu" href="/resources/">RESOURCES</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="primary-menu-blocks">
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Community</div>
+                                                            <a href="/community/" class="menu-sub-block-item">Community Overview</a>
+                                                            <a href="/quick-start/" class="menu-sub-block-item">Getting Started Guide</a>
+                                                            <a href="/learning-paths/" class="menu-sub-block-item">Learning Paths</a>
+                                                            <a href="/training/" class="menu-sub-block-item">Introductory Training</a>
+                                                            <a href="/tutorials/" class="menu-sub-block-item">Tutorials</a>
+                                                            <a href="/online-meetups/" class="menu-sub-block-item">Online Meetups</a>
+                                                            <a href="/rodeos/" class="menu-sub-block-item">Hands-on Workshops</a>
+                                                            <a href="/kubernetes-master-class/" class="menu-sub-block-item">Kubernetes Master Classes</a>
+                                                            
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Content Library</div>
+                                                            <a href="/docs" class="menu-sub-block-item">Docs</a>
+                                                            <a href="/resources/#analyst-reports" class="menu-sub-block-item">Analyst Reports</a>
+                                                            <a href="/resources/#whitepapers" class="menu-sub-block-item">
+                                                            White Papers</a>
+                                                            <a href="/resources/#ebooks" class="menu-sub-block-item">Ebooks</a>
+                                                            <a href="/resources/#videos" class="menu-sub-block-item">Videos</a>
+                                                            <a href="/resources/#podcasts" class="menu-sub-block-item">Podcasts</a>
+                                                            <a href="/blog/" class="menu-sub-block-item">Blog</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Projects</div>
+                                                            <a href="/rancher-os" class="menu-sub-block-item">RancherOS</a>
+                                                            <a href="http://k3os.io" target="_blank" class="menu-sub-block-item">k3OS <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                            <a href="http://submariner.io" target="_blank" class="menu-sub-block-item">Submariner <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                            <a href="https://longhorn.io" target="_blank" class="menu-sub-block-item">Longhorn <svg class='icon-horizontal-center' style="width:24px;height:24px" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" /></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="primary-menu-blocks primary-menu-blocks-join">
+                                                <div class="menu-sub-block">
+                                                    <ul>
+                                                        <li class="articles-container">
+                                                            <div class="label">Join the Community</div>
+                                                            <div class="menu-sub-items">
+                                                                <a href="https://forums.rancher.com/" class="menu-sub-block-item">Forums</a>
+                                                                <span class="menu-sub-block-item">|</span>
+                                                                <a href="http://slack.rancher.io/" class="menu-sub-block-item">Slack</a>
+                                                                <span class="menu-sub-block-item">|</span>
+                                                                <a href="https://github.com/rancher" class="menu-sub-block-item">Github</a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class='primary-menu-item menu-company '>
+                                    <a class="primary-menu" href="/about/">Company</a>
+
+                                    <ul class="primary-menus-sub">
+                                        <div class="grid-container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <li class="menus-container">
+                                                        <a href="/about/">
+                                                            <span>About us</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/partners/">
+                                                            <span>Partners</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/press/">
+                                                            <span>Press</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/events/">
+                                                            <span>Events</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/careers/">
+                                                            <span>Careers</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                        <a href="/blog/">
+                                                            <span>Blog</span>
+                                                            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                                                                <g class="svg-linear" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                                                    <path d="m19.5 12 5 5-5 5"/>
+                                                                    <path d="m24.5 17h-15"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="primary-menu-item menu-get_started get-started">
+                                    <a href="/quick-start/">Get started</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+<div class="modal-content" id="open-search">
+  <div class="content search-modal">
+    
+    <div class="container-search">
+      <form id="searchForm"><input type="search" id="search-box" autocomplete="off"></input></form>
+    </div>
+
+    
+    <div class="overlay-search">
+      <div class="search-results" id="hits"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <section class="docs-container">
+    <div class="grid-container">
+      <div class="row max-sized set-lines set-ground">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+      </div>
+
+      <div class="head-blank"></div>
+
+      <div class="row max-sized contents-container background-base-gray-side">
+        <div class="
+        col-xl-3
+        col-lg-4
+        col-md-4
+        col-sm-12
+        col-xs-12
+        col-12
+        side-menus">
+        <div class="search-container">
+          <input class="search input" placeholder="SEARCH" />
+        </div>
+
+        
+        
+
+  
+    
+      
+        
+      
+    
+  
+
+  
+    
+      
+        
+          
+        
+      
+    
+  
+
+  
+    
+      
+        
+      
+    
+  
+
+  
+    
+      
+        
+      
+    
+  
+
+
+
+<div class="side-menus-container product-select tree-nav jquery-accordion-menu">
+  <ul class="side-menus-wrap">
+    <li class="tree-nav-item">
+      <a>
+        
+          
+            
+              
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  RKE
+                
+              
+            
+          
+        
+          
+            
+              
+                
+              
+            
+          
+        
+          
+            
+              
+                
+              
+            
+          
+        
+        <span class="submenu-indicator">
+          <span class="object1"></span>
+          <span class="object2"></span>
+          <span class="object3"></span>
+        </span>
+      </a>
+
+      <ul class="tree-nav-sublist submenu submenus-wrap hide">
+        
+          
+            
+              <li><a href="http://jijeesh.github.io/docs/k3s/latest/en/">K3s</a></li>
+              
+            
+          
+        
+          
+            
+              <li><a href="http://jijeesh.github.io/docs/rke/latest/en/">RKE</a></li>
+              
+            
+          
+        
+          
+            
+              <li><a href="http://jijeesh.github.io/docs/rancher/v2.x/en/">Rancher 2.x</a></li>
+              
+                <li><a href="https://rancher.com/docs/rancher/v1.6/en/" target="blank">Rancher 1.6</a></li>
+              
+            
+          
+        
+          
+            
+              <li><a href="http://jijeesh.github.io/docs/os/v1.x/en/">RancherOS</a></li>
+              
+            
+          
+        
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="guide-menus-activator">
+  
+    External etcd
+  
+
+  <span class="indicator">
+    <span class="object1"></span>
+    <span class="object2"></span>
+    <span class="object3"></span>
+  </span>
+</div>
+<div class="side-menus-container guide-menus tree-nav jquery-accordion-menu">
+  <ul class="side-menus-wrap second">
+    
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/os/" class="">Requirements</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/installation/" class="">RKE Kubernetes Installation<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/installation/certs/" class="">Custom Certificates</a>
+        </li>
+</ul></li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/upgrades/" class="">Upgrades</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/kubeconfig/" class="">Kubeconfig File</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/" class="">Backups and Disaster Recovery<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/one-time-snapshots/" class="">One-time Snapshots</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/recurring-snapshots/" class="">Recurring Snapshots</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/restoring-from-backup/" class="">Restoring from Backup</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/example-scenarios/" class="">Example Scenarios</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/etcd-snapshots/troubleshooting/" class="">Troubleshooting</a>
+        </li>
+</ul></li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/cert-mgmt/" class="">Certificate Management</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/managing-clusters/" class="">Adding and Removing Nodes</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/" class="submenu-indicator-minus">Kubernetes Configuration Options<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap ">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/nodes/" class="">Nodes</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/private-registries/" class="">Private Registries</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/bastion-host/" class="">Bastion/Jump Host Configuration</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/system-images/" class="">System Images</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/services/" class="submenu-indicator-minus">Default Kubernetes Services<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap ">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/services/services-extras/" class="">Extra Args, Extra Binds, and Extra Environment Variables</a>
+        </li>
+
+  <li class="tree-nav-item active">
+        <a href="/docs/rke/latest/en/config-options/services/external-etcd/" class="submenu-indicator-minus">External etcd</a>
+        </li>
+</ul></li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/secrets-encryption/" class="">Encrypting Secret Data at Rest</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/authentication/" class="">Authentication</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/authorization/" class="">Authorization</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/rate-limiting/" class="">Rate Limiting</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/" class="">Cloud Providers<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/aws/" class="">AWS Cloud Provider</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/azure/" class="">Azure Cloud Provider</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/openstack/" class="">Openstack Cloud Provider</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/vsphere/" class="">vSphere Cloud Provider<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/vsphere/enabling-uuid/" class="">Enabling Disk UUIDs for vSphere VMs</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/vsphere/config-reference/" class="">vSphere Configuration Reference</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/vsphere/troubleshooting/" class="">Troubleshooting vSphere Clusters</a>
+        </li>
+</ul></li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/cloud-providers/custom/" class="">Custom Cloud Provider</a>
+        </li>
+</ul></li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/audit-log/" class="">Audit Log</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/" class="">Add-Ons<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/network-plugins/" class="">Network Plug-ins<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/network-plugins/custom-network-plugin-example/" class="">Custom Network Plug-in Example</a>
+        </li>
+</ul></li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/dns/" class="">DNS providers</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/ingress-controllers/" class="">K8s Ingress Controllers</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/metrics-server/" class="">Metrics Server</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/config-options/add-ons/user-defined-add-ons/" class="">User-Defined Add-Ons</a>
+        </li>
+</ul></li>
+</ul></li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/example-yamls/" class="">Example Cluster.ymls</a>
+        </li>
+
+    
+      
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/troubleshooting/" class="">Troubleshooting<span class="submenu-indicator">
+              <span class="object1"></span>
+              <span class="object2"></span>
+              <span class="object3"></span>
+            </span></a>
+        
+        <ul class="tree-nav-sublist submenu submenus-wrap hide">
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/troubleshooting/ssh-connectivity-errors/" class="">SSH Connectivity Errors</a>
+        </li>
+
+  <li class="tree-nav-item ">
+        <a href="/docs/rke/latest/en/troubleshooting/provisioning-errors/" class="">Provisioning Errors</a>
+        </li>
+</ul></li>
+
+    
+  </ul>
+</div>
+
+
+
+        
+      </div>
+      <div class="
+        col-xl-9
+        col-lg-8
+        col-md-8
+        col-sm-12
+        col-xs-12
+        col-12
+        texts-container">
+        <div class="docs-wrap">
+            
+            <h1 class="m-t-0">External etcd</h1>
+            <hr/>
+          
+
+          
+
+          <div class="main-content docs-body">
+            
+            
+            
+            
+
+<p>By default, RKE will launch etcd servers, but RKE also supports being able to use an external etcd. RKE only supports connecting to a TLS enabled etcd setup.</p>
+
+<blockquote>
+<p><strong>Note:</strong> RKE will not accept having external etcd servers in conjunction with <a href="http://jijeesh.github.io/docs/rke/latest/en/config-options/nodes/">nodes</a> with the <code>etcd</code> role.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">services:<span style="color:#666">
+</span><span style="color:#666">    </span>etcd:<span style="color:#666">
+</span><span style="color:#666">      </span>path:<span style="color:#666"> </span>/etcdcluster<span style="color:#666">
+</span><span style="color:#666">      </span>external_urls:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>https://etcd-example.com:<span style="color:#3677a9">2379</span><span style="color:#666">
+</span><span style="color:#666">      </span>ca_cert:<span style="color:#666"> </span>|<span style="color:#ed9d13">-
+</span><span style="color:#ed9d13">        -----BEGIN CERTIFICATE-----</span><span style="color:#666">
+</span><span style="color:#666">        </span>xxxxxxxxxx<span style="color:#666">
+</span><span style="color:#666">        </span>-----END<span style="color:#666"> </span>CERTIFICATE----<span style="color:#ed9d13">-
+</span><span style="color:#ed9d13">      cert: |-</span><span style="color:#666">
+</span><span style="color:#666">        </span>-----BEGIN<span style="color:#666"> </span>CERTIFICATE----<span style="color:#ed9d13">-
+</span><span style="color:#ed9d13">        xxxxxxxxxx</span><span style="color:#666">
+</span><span style="color:#666">        </span>-----END<span style="color:#666"> </span>CERTIFICATE----<span style="color:#ed9d13">-
+</span><span style="color:#ed9d13">      key: |-</span><span style="color:#666">
+</span><span style="color:#666">        </span>-----BEGIN<span style="color:#666"> </span>PRIVATE<span style="color:#666"> </span>KEY----<span style="color:#ed9d13">-
+</span><span style="color:#ed9d13">        xxxxxxxxxx</span><span style="color:#666">
+</span><span style="color:#666">        </span>-----END<span style="color:#666"> </span>PRIVATE<span style="color:#666"> </span>KEY-----</code></pre></div>
+<h2 id="external-etcd-options">External etcd Options</h2>
+
+<h3 id="path">Path</h3>
+
+<p>The <code>path</code> defines the location of where the etcd cluster is on the endpoints.</p>
+
+<h3 id="external-urls">External URLs</h3>
+
+<p>The <code>external_urls</code> are the endpoints of where the etcd cluster is hosted. There can be multiple endpoints for the etcd cluster.</p>
+
+<h3 id="ca-cert-cert-key">CA Cert/Cert/KEY</h3>
+
+<p>The certificates and private keys used to authenticate and access the etcd service.</p>
+
+
+            
+            
+            </div>
+            
+
+
+            <div class="p-v-xs">
+<div class="buttons-container">
+    <a href="https://github.com/rancher/docs/edit/master/content/rke/latest/en/config-options/services/external-etcd/_index.md" class="btn bg-link">
+        <button class="button has-icon-right">
+            <span>Edit this page</span>
+            <svg class="icon right" enable-background="new 0 0 34 34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <path class="svg-linear" d="m19.5 12 5 5-5 5"></path>
+                    <path class="svg-linear" d="m24.5 17h-15"></path>
+                </g>
+            </svg>
+        </button>
+    </a>
+</div>
+</div>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $(document).ready(function() {
+      $('.guide-menus-activator').click(function() {
+        $('.docs-container .side-menus').toggleClass('show');
+      });
+
+      
+      $("a[href*='#']").click(function(e) {
+      
+
+        if ($(this).attr('data-target') === undefined && $(this).attr('href').length > 1) {
+          var hash = $(this).attr('href').substring(1),
+              objt = $('#' + hash),
+              objt_mt = Number(objt.css('margin-top').replace(/[^0-9]/g,"")),
+              depth = 80,
+              scrn = $(window).width();
+              scrn_check = 1025;
+
+          if (scrn < scrn_check) {
+            depth = 120;
+          }
+
+          if (objt_mt > 0) {
+            depth = depth + objt_mt
+          }
+
+          if ($(this).attr('href').charAt(0) === '#') {
+            var objectTop = $($(this).attr('href')).offset().top;
+
+            setTimeout(function() {
+              $('html').scrollTop(objectTop - depth);
+            }, 100);
+          }
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+  
+  
+
+    <footer>
+
+        <div class="footer-container">
+            <div class="grid-container informations">
+                <div class="row max-sized">
+                    <div class="
+                        col-xl-3
+                        col-lg-3
+                        col-md-4
+                        col-sm-12
+                        col-12">
+                        <div class="footer-side-items">
+                            <div class="footer-news-letter-form">
+                                <div class="label">Get the latest news</div>
+
+                                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                                <script>
+                                  hbspt.forms.create({
+                                    css: '',
+                                    portalId: '468859',
+                                    formId: '8beed251-ecf0-49fc-93a1-fa9b1446110f',
+                                    translations: {
+                                      en: {
+                                        submitText: " "
+                                      }
+                                    }
+                                  });
+                                </script>
+                            </div>
+
+                            <div class="footer-connect-sns">
+                                <div class="label">Connect with us</div>
+
+                                <ul>
+                                    <li>
+                                        <a href="https://twitter.com/Rancher_Labs" target="_blank"><img src="/imgs/icon-twitter.svg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/rancher" target="_blank"><img src="/imgs/icon-linkedin.svg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/rancherlabs/" target="_blank"><img src="/imgs/icon-facebook.svg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCh5Xtp82q8wjijP8npkVTBA" target="_blank"><img src="/imgs/icon-youtube.svg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/rancher/rancher" target="_blank"><img src="/imgs/icon-github.svg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://slack.rancher.io/" target="_blank"><img src="/imgs/icon-slack.svg"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="
+                        col-xl-8 offset-xl-1
+                        col-lg-9 offset-lg-0
+                        col-md-8 offset-md-0
+                        col-sm-12 offset-sm-0
+                        col-12">
+                        <div class="row footer-sitemaps">
+                            <ul class="
+                                col-xl-3
+                                col-lg-3
+                                col-md-3
+                                col-sm-6
+                                col-xs-6
+                                col-6
+                                ">
+                                <div class="label">Products</div>
+                                <li><a href="/products/rancher/">Rancher</a></li>
+                                <li><a href="/products/rke/">RKE</a></li>
+                                <li><a href="http://k3s.io" target="_blank">k3s</a></li>
+                                <li><a href="https://rio.io/" target="_blank">Rio</a></li>
+                                <li><a href="/support/request/">Get Support</a></li>
+                                <li><a href="/pricing/">Pricing</a></li>
+                                <li><a href="/request-a-demo/">Request a Demo</a></li>
+                            </ul>
+                            <ul class="
+                                col-xl-3
+                                col-lg-3
+                                col-md-3
+                                col-sm-6
+                                col-xs-6
+                                col-6
+                                ">
+                                <div class="label">Community</div>
+                                <li><a href="/events/">Events</a></li>
+                                <li><a href="/online-meetups/">Online Meetups</a></li>
+                                <li><a href="/training/">Training</a></li>
+                                <li><a href="/tutorials/">Tutorials</a></li>
+                                <li><a href="/kubernetes-master-class/">Kubernetes Master Classes</a></li>
+                                <li><a href="/writing-program/">Rancher Writing Program</a></li>
+                                <li><a href="https://forums.rancher.com/">Forums</a></li>
+                                <li><a href="http://slack.rancher.io/">Slack</a></li>
+                                <li><a href="https://github.com/rancher/">GitHub</a></li>
+                            </ul>
+                            <ul class="
+                                col-xl-3
+                                col-lg-3
+                                col-md-3
+                                col-sm-6
+                                col-xs-6
+                                col-6
+                                ">
+                                <div class="label">Resources</div>
+                                <li><a href="/docs/rancher/v2.x/en/">Rancher 2.x Docs</a></li>
+                                <li><a href="/docs/rancher/v1.6/en/">Rancher 1.6 Docs</a></li>
+                                <li><a href="/docs/rke/latest/en/">RKE Docs</a></li>
+                                <li><a href="/docs/k3s/latest/en/">k3s Docs</a></li>
+                                <li><a href="/docs/os/v1.x/en/">RancherOS Docs</a></li>
+                                <li><a href="/ebooks-and-whitepapers/">eBooks and White Papers</a></li>
+                                <li><a href="/videos-and-podcasts/">Videos and Podcasts</a></li>
+                                <li><a href="/quick-start/">Getting Started Guide</a></li>
+                                <li><a href="/kubernetes/">Why Kubernetes</a></li>
+                            </ul>
+                            <ul class="
+                                col-xl-3
+                                col-lg-3
+                                col-md-3
+                                col-sm-6
+                                col-xs-6
+                                col-6
+                                ">
+                                <div class="label">Company</div>
+                                <li><a href="/about/">About Us</a></li>
+                                <li><a href="/customers/">Customers</a></li>
+                                <li><a href="/partners/">Partners</a></li>
+                                <li><a href="/careers/">Careers</a></li>
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/press/">Press</a></li>
+                                <li><a href="/contact/">Contact Us</a></li>
+                                <li><a href="https://www.rancher.cn/">China Site</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container footer-copyright">
+                <div class="row align-items-center grid-row max-sized footer-copyright-wrap">
+                    <div class="
+                        col-xl-6
+                        col-lg-6
+                        col-md-6
+                        col-sm-12
+                        col-xs-12
+                        col-12
+                        text">
+                        © Copyright 2020 Rancher. All Rights Reserved.
+                    </div>
+                    <div class="
+                        col-xl-6
+                        col-lg-6
+                        col-md-6
+                        col-sm-12
+                        col-xs-12
+                        col-12
+                        sub-menus">
+                        <ul>
+                            <li><a href="/privacy/">Privacy Policy</a></li>
+                            <li><a href="/agreements/">Agreements</a></li>
+                            <li><a href="/support-maintenance-terms/">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+<script>
+
+var VAR_DATAS = {
+    SPEED_SLIDE:         1000,
+    SPEED_SLIDE_DELAYED: 1200,
+    SPEED_AUTOPLAY:      4000
+};
+
+
+
+function sliderProgressPlay(slider, progressBar, duration, repeatable) {
+    
+    progressBar.stop().css('width', 0);
+
+    progressBar.animate({
+        width: '100%'
+    }, duration || 5000, function() { 
+        
+        progressBar.animate({width: '0%'}, 100);
+
+        
+        slider.slick('slickNext');
+
+        if (repeatable) sliderProgressPlay(slider, progressBar, duration, repeatable);
+    });
+}
+
+function scrollPage(hash) {
+    var hash = hash.substring(1),
+        objt = $('#' + hash),
+        objt_mt = Number(objt.css('margin-top').replace(/[^0-9]/g,"")),
+        depth = 80,
+        scrn = $(window).width();
+        scrn_check = 1025;
+
+    if (scrn < scrn_check) {
+        depth = 160;
+    }
+
+    if (objt_mt > 0) {
+        depth = depth + objt_mt
+    }
+
+    setTimeout(function() {
+        $('html').animate({
+            'scrollTop': objt.offset().top - depth
+        }, 400);
+    }, 100);
+
+    
+}
+
+
+$(document).ready(function() {
+    
+    ;(function ( $, window, document, undefined ) {
+        var pluginName = "jqueryAccordionMenu";
+        var defaults = {
+                speed: 300,
+                showDelay: 0,
+                hideDelay: 0,
+                singleOpen: true,
+                clickEffect: true
+            };
+
+        function Plugin ( element, options ) {
+            this.element = element;
+            this.settings = $.extend( {}, defaults, options );
+            this._defaults = defaults;
+            this._name = pluginName;
+            this.init();
+        };
+
+        $.extend(Plugin.prototype, {
+
+            init: function () {
+                this.openSubmenu();
+                this.submenuIndicators();
+                if(this.settings.clickEffect){
+                    this.addClickEffect();
+                }
+            },
+
+            openSubmenu: function () {
+                var opts = this.settings; 
+                $(this.element).children("ul").find("li").bind("click", function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    if ($(this).attr('class') === 'back-to-the-top') {
+                        $('.mobile-header-container').scrollTop(0);
+                    }
+
+                    if($(this).children(".submenu").length > 0){
+                        if($(this).children(".submenu").css("display") == "none"){
+                            $(this).children(".submenu").delay(opts.showDelay).slideDown(opts.speed);
+                            $(this).children(".submenu").siblings("a").addClass("submenu-indicator-minus");
+                            $(this).addClass("activate");
+                            if(opts.singleOpen){
+                                $(this).siblings().children(".submenu").slideUp(opts.speed);
+                                $(this).siblings().children(".submenu").siblings("a").removeClass("submenu-indicator-minus");
+                                $(this).removeClass("activate");
+                            }
+
+                            return false;
+                        }else {
+                            $(this).children(".submenu").delay(opts.hideDelay).slideUp(opts.speed);
+                        }
+
+                        if($(this).children(".submenu").siblings("a").hasClass("submenu-indicator-minus")){
+                            $(this).children(".submenu").siblings("a").removeClass("submenu-indicator-minus");
+                            $(this).removeClass("activate");
+                        }
+                    }
+
+                    window.location.href = $(this).children("a").attr("href");
+                });
+            },
+
+            submenuIndicators: function () {
+                if($(this.element).find(".submenu").length > 0){
+                    $(this.element).find(".submenu").siblings("a").append("<span class='submenu-indicator'><span class='object1'></span><span class='object2'></span><span class='object3'></span></span>");
+                }
+            },
+
+            addClickEffect: function () {
+                var ink, d, x, y;
+
+                $(this.element).find("a").bind("click", function(e){
+
+                    $(".ink").remove();
+
+                    if($(this).children(".ink").length === 0){
+                        $(this).prepend("<span class='ink'></span>");
+                    }
+
+                    ink = $(this).find(".ink");
+                    ink.removeClass("animate-ink");
+
+                    if(!ink.height() && !ink.width()){
+                        d = Math.max($(this).outerWidth(), $(this).outerHeight());
+                        ink.css({height: d, width: d});
+                    }
+
+                    x = e.pageX - $(this).offset().left - ink.width()/2;
+                    y = e.pageY - $(this).offset().top - ink.height()/2;
+
+                    ink.css({top: y+'px', left: x+'px'}).addClass("animate-ink");
+                });
+            }
+
+        });
+
+        $.fn[ pluginName ] = function ( options ) {
+            this.each(function() {
+                if ( !$.data( this, "plugin_" + pluginName ) ) {
+                    $.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
+                }
+            });
+            return this;
+        };
+    })( jQuery, window, document );
+
+    
+    var mobileNavActivator = $('.mobile-menu-opener'),
+        mobileNavContainer = $('.mobile-header-container'),
+        mobileNavMenus     = $('.nav-mobile-menus');
+
+    mobileNavMenus.jqueryAccordionMenu();
+
+    mobileNavActivator.click(function() {
+        if (mobileNavContainer.hasClass('active')) {
+            mobileNavContainer.removeClass('active');
+        } else {
+            mobileNavContainer.addClass('active');
+        }
+    });
+
+
+    
+    ScrollReveal().reveal('.decoration.cloud.right', {
+        delay: 400,
+        origin: 'right',
+        duration: 1500,
+        distance: '50%'
+    });
+
+
+    
+    
+    
+    
+    
+    
+    ScrollReveal().reveal('footer .get-started-container .rancher-logo', {
+        delay: 200,
+        origin: 'bottom',
+        distance: '20%',
+        opacity: 0,
+        viewFactor: .5,
+        mobile: false
+    });
+
+
+    if(window.location.hash) {
+        scrollPage(window.location.hash);
+    }
+
+    $('.docs-wrap .accordion > label').click(function() {
+        if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+    });
+
+    var mobileNavContainer = $('.mobile-header-container');
+
+    if ($(this).scrollTop() > 50) {
+        mobileNavContainer.addClass('add-blinder');
+    } else {
+        mobileNavContainer.removeClass('add-blinder');
+    }
+
+    var stkNav = $('.header-container');
+
+    if ($(window).scrollTop() > 50) {
+        stkNav.addClass('sticky');
+    } else {
+        stkNav.removeClass('sticky');
+    }
+}).on("scroll", function(e) {
+    var mobileNavContainer = $('.mobile-header-container');
+
+    if ($(this).scrollTop() > 50) {
+        mobileNavContainer.addClass('add-blinder');
+    } else {
+        mobileNavContainer.removeClass('add-blinder');
+    }
+
+    var stkNav = $('.header-container');
+
+    if ($(window).scrollTop() > 50) {
+        stkNav.addClass('sticky');
+    } else {
+        stkNav.removeClass('sticky');
+    }
+});
+</script>
+
+
+
+  
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/468859.js"></script>
+  
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5af1cc6793d86bfb" async></script>
+
+
+</body>
+</html>
+
